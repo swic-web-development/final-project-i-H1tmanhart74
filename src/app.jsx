@@ -9,7 +9,15 @@ export default function App() {
     function fetchVehicles() {
       fetch('https://swapi.tech/api/vehicles/')
         .then((response) => response.json())
-        .then((data) => setVehicles(data.results))
+        .then((data) => {
+          Promise.all(
+            data.results.map((item) =>
+              fetch(item.url)
+                .then((res) => res.json())
+                .then((detail) => detail.result.properties),
+            ),
+          ).then((vehiclesWithDetails) => setVehicles(vehiclesWithDetails))
+        })
         .catch((error) => {
           console.error('Error fetching vehicles:', error)
         })
