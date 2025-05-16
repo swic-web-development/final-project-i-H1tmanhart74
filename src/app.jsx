@@ -27,7 +27,7 @@ export default function App() {
   }, [])
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-900 text-white">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-black text-white">
       <Header />
       <VehicleGrid vehicles={vehicles} />
     </main>
