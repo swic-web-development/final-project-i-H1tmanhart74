@@ -7,7 +7,7 @@ export default function App() {
 
   useEffect(() => {
     function fetchVehicles() {
-      fetch('https://swapi.dev/api/vehicles/')
+      fetch('https://swapi.tech/api/vehicles/')
         .then((response) => response.json())
         .then((data) => setVehicles(data.results))
         .catch((error) => {

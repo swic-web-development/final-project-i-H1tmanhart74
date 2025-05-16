@@ -1,5 +1,5 @@
-export default function Section({ vehicles }) {
-  const { name, model, manufacturer, cost_in_credits } = vehicles
+export default function Section({ vehicle }) {
+  const { name, model, manufacturer, cost_in_credits } = vehicle
 
   return (
     <section className="flex flex-col items-center justify-center rounded-lg bg-gray-800 p-4 shadow-lg">
